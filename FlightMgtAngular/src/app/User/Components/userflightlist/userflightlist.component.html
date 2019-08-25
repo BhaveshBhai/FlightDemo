@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #fdf1e0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToUserHome()"style="cursor: pointer;">Flight Center</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()"style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToSearchBooking()"style="cursor: pointer;">Search Booking</a>
+      </li>
+      <li>
+        <a (click)="goToCheckAvailability()"style="cursor: pointer;">Check Availability</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #f7e3c4;padding: 0px;">
+      <table class="table table-striped" style="margin-bottom:0px;">
+        <thead>
+        <tr>
+          <th>Flight No</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Passenger Capacity</th>
+          <th>Departure City</th>
+          <th>Arrival City</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let flight of flightList">
+          <td>{{flight.FlightNo}}</td>
+          <td>{{flight.StartDate}}</td>
+          <td>{{flight.EndDate}}</td>
+          <td>{{flight.PassCapacity}}</td>
+          <td>{{flight.DepartCity}}</td>
+          <td>{{flight.ArrivalCity}}</td>
+          <td><a (click)="getBooking(flight)" style="cursor: pointer;">Book</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #fdf1e0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToUserHome()" style="cursor: pointer;">Flight Center</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()" style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToSearchBooking()" style="cursor: pointer;">Search Booking</a>
+      </li>
+      <li>
+        <a (click)="goToCheckAvailability()" style="cursor: pointer;">Check Availability</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="col-md-12">
+  <div class="col-md-10 col-md-offset-1" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #f7e3c4;padding: 0px;">
+    <div class="col-md-12" style="padding-bottom: 20px;">
+      <form name="form" (ngSubmit)="getCheckAvailability(checkAvailabilityForm)" #checkAvailabilityForm="ngForm">
+        <div class="col-md-3" style="margin-top: 10px;">
+          <label for="flightno">Start Date</label>
+          <input type="date" class="form-control" placeholder="Enter start date" name="search.StartDate" id="search.StartDate" [(ngModel)]="search.StartDate">
+        </div>
+        <div class="col-md-3" style="margin-top: 10px;">
+          <label for="flightno">End Date</label>
+          <input type="date" class="form-control" placeholder="Enter end date" name="search.EndDate" id="search.EndDate" [(ngModel)]="search.EndDate">
+        </div>
+        <div class="col-md-4" style="margin-top: 10px;">
+          <label for="flightno">Number of Passenger</label>
+          <input type="text" class="form-control" placeholder="Enter Number of Passenger" name="search.NoOfPassenger" id="search.NoOfPassenger" [(ngModel)]="search.NoOfPassenger">
+        </div>
+        <div class="col-md-1" style="margin-top: 34px;">
+          <button class="btn btn-success">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="flightList != null" class="col-md-10 col-md-offset-1" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #f7e3c4;padding: 0px;">
+    <table class="table table-striped" style="margin-bottom:0px;">
+      <thead>
+        <tr>
+          <th>Flight Number</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Departure</th>
+          <th>Arrival</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flightList">
+          <td>{{flight.FlightNo}}</td>
+          <td>{{flight.StartDate}}</td>
+          <td>{{flight.EndDate}}</td>
+          <td>{{flight.DepartCity}}</td>
+          <td>{{flight.ArrivalCity}}</td>
+          <td [ngStyle]="flight.Status == 'WaitList' ?{'background-color': '#ff2626','color':'white'} : {'background-color': '#56a50f', 'color': 'white'}">{{flight.Status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

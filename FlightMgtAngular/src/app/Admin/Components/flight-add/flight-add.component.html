@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #ebe9f9;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToAdminHome()" style="cursor: pointer;">Admin Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()" style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToAddFlight()" style="cursor: pointer;">Add Flight</a>
+      </li>
+      <li>
+        <a (click)="goToWaitingNotification()" style="cursor: pointer;">Waiting List Notification</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<form name="form" (ngSubmit)="addNewFlight(flightForm)" #flightForm="ngForm" novalidate>
+  <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3" style="margin-top: 20px; padding: 18px;border-radius: 5px;border: 1px solid silver;background-color: #e0def5;">
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="flightno">Flight No</label>
+        <input type="text" class="form-control" id="flightno" placeholder="Enter Flight Number" name="flightno" [(ngModel)]="flightModel.FlightNo" required>
+      </div>
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="startdate">Start Date</label>
+        <input type="date" class="form-control" id="startdate" placeholder="Enter Start Date" name="startdate" [(ngModel)]="flightModel.StartDate" required>
+      </div>
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="enddate">End Date</label>
+        <input type="date" class="form-control" id="enddate" placeholder="Enter End Date" name="enddate" [(ngModel)]="flightModel.EndDate" required>
+      </div>
+      <div class="form-group">
+        <label for="passcapacity">Passenger Capacity</label>
+        <input type="number" class="form-control" id="passCapacity" placeholder="Enter Passenger Capacity" name="passcapacity" [(ngModel)]="flightModel.PassCapacity" required>
+      </div>
+      <div class="form-group">
+        <label for="depcity">Departure City</label>
+        <input type="text" class="form-control" id="depcity" placeholder="Enter Departure City" name="depcity" [(ngModel)]="flightModel.DepartCity" required>
+      </div>
+      <div class="form-group">
+        <label for="arrcity">Arrival City</label>
+        <input type="text" class="form-control" id="arrcity" placeholder="Enter Arrival City" name="arrcity" [(ngModel)]="flightModel.ArrivalCity" required>
+      </div>
+      <button class="btn btn-success">Add Flight</button>
+    </div>
+  </div>
+</form>

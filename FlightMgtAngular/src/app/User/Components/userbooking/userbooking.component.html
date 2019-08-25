@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #fdf1e0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToUserHome()" style="cursor: pointer;">Flight Center</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()" style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToSearchBooking()" style="cursor: pointer;">Search Booking</a>
+      </li>
+      <li>
+        <a (click)="goToCheckAvailability()" style="cursor: pointer;">Check Availability</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #f7e3c4;padding: 0px;">
+      <h4 style="margin-left: 5px;">Flight Details</h4>
+      <table class="table" style="margin-bottom:0px;">
+        <tr>
+          <td>Flight No</td>
+          <td>{{flightData.FlightNo}}</td>
+        </tr>
+        <tr>
+          <td>Start Date</td>
+          <td>{{flightData.StartDate}}</td>
+        </tr>
+        <tr>
+          <td>End Date</td>
+          <td>{{flightData.EndDate}}</td>
+        </tr>
+        <tr>
+          <td>Departure City</td>
+          <td>{{flightData.DepartCity}}</td>
+        </tr>
+        <tr>
+          <td>Arrival City</td>
+          <td>{{flightData.ArrivalCity}}</td>
+        </tr>
+      </table>
+      <div class="col-md-12">
+        <hr />
+      </div>
+      <h4 style="margin-left: 5px;">Passenger Details</h4>
+      <form name="form" (ngSubmit)="addPassengers(addPassengerForm)" #addPassengerForm="ngForm">
+        <div style="padding-top: 0px !important; padding: 18px;border-radius: 5px;">
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="flightno">Passenger Name</label>
+            <input type="text" class="form-control" placeholder="Enter Passenger Name" name="bookingInput.PassengerName" id="bookingInput.PassengerName" [(ngModel)]="bookingInput.PassengerName">
+          </div>
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="startdate">Booking Date</label>
+            <input type="date" class="form-control" placeholder="Enter Booking Date" name="bookingInput.BDate" id="bookingInput.BDate" [(ngModel)]="bookingInput.BDate">
+          </div>
+          <button class="btn btn-success">Add</button>
+          <button class="btn btn-warning" (click)="goToFlightList()" style="margin-left: 15px;">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

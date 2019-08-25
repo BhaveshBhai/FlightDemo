@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #ebe9f9;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToAdminHome()" style="cursor: pointer;">Admin Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()" style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToAddFlight()" style="cursor: pointer;">Add Flight</a>
+      </li>
+      <li>
+        <a (click)="goToWaitingNotification()" style="cursor: pointer;">Waiting List Notification</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #e0def5;padding: 0px;">
+      <table class="table table-striped" style="margin-bottom:0px;">
+        <thead>
+          <tr>
+            <th>Flight Number</th>
+            <th>Booking Date</th>
+            <th>Passenger Name</th>
+            <th>Arrival City</th>
+            <th>Departure City</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of waitList">
+            <td>{{item.FlightNo}}</td>
+            <td>{{item.BDate}}</td>
+            <td>{{item.PessName}}</td>
+            <td>{{item.BArrivalCity}}</td>
+            <td>{{item.BDepartCity}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

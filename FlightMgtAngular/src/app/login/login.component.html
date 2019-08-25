@@ -1,0 +1,19 @@
+<div style="text-align: center">
+  <h1>Welcome to Flight Center</h1>
+</div>
+<div class="col-md-offset-4" style="margin-top: 50px;">
+  <form #myform="ngForm" (ngSubmit)="login(myform)">
+    <div class="col-md-5" style="padding: 40px;background-color: #dae2f1;border-radius: 5px;">
+      <h3 style="margin: 0px;">Login</h3>
+      <div class="form-group" style="margin-top: 15px;">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" [(ngModel)]="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" [(ngModel)]="password" required>
+      </div>
+      <button type="button" (click)="isUserExist()" class="btn btn-success">Login</button>
+    </div>
+  </form>
+</div>

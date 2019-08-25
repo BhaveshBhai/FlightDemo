@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #ebe9f9;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToAdminHome()" style="cursor: pointer;">Admin Panel</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()" style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToAddFlight()" style="cursor: pointer;">Add Flight</a>
+      </li>
+      <li>
+        <a (click)="goToWaitingNotification()" style="cursor: pointer;">Waiting List Notification</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <div class="col-md-12">
+    <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #e0def5;padding: 0px;">
+      <table class="table table-striped" style="margin-bottom:0px;">
+        <thead>
+          <tr>
+            <th>Flight No</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Passenger Capacity</th>
+            <th>Departure City</th>
+            <th>Arrival City</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flight of flightList">
+            <td>{{flight.FlightNo}}</td>
+            <td>{{flight.StartDate}}</td>
+            <td>{{flight.EndDate}}</td>
+            <td>{{flight.PassCapacity}}</td>
+            <td>{{flight.DepartCity}}</td>
+            <td>{{flight.ArrivalCity}}</td>
+            <td><a (click)="getFlightDetail(flight)"><i class="glyphicon glyphicon-pencil" style="color: navy;cursor: pointer;"></i></a></td>
+            <td><a (click)="deleteFlight(flight)"><i class="glyphicon glyphicon-trash" style="color: red;cursor: pointer;"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

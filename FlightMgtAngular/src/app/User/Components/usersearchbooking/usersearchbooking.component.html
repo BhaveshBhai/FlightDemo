@@ -1,0 +1,76 @@
+<nav class="navbar navbar-default" style="margin-bottom: 0px !important;background-color: #fdf1e0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" (click)="goToUserHome()" style="cursor: pointer;">Flight Center</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a (click)="goToFlightList()" style="cursor: pointer;">Flights List</a>
+      </li>
+      <li>
+        <a (click)="goToSearchBooking()" style="cursor: pointer;">Search Booking</a>
+      </li>
+      <li>
+        <a (click)="goToCheckAvailability()" style="cursor: pointer;">Check Availability</a>
+      </li>
+      <li>
+        <a (click)="goToLogin()" style="cursor: pointer;">Logout <i class="glyphicon glyphicon-off"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <div class="col-md-12">
+    <div class="col-md-10 col-md-offset-1" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #f7e3c4;padding: 0px;">
+      <div class="col-md-12" style="padding-bottom: 20px;">
+        <form name="form" (ngSubmit)="getSearchBooking(searchBookForm)" #searchBookForm="ngForm">
+          <div class="col-md-4" style="margin-top: 10px;">
+            <label for="flightno">Passenger Name</label>
+            <input type="text" class="form-control" placeholder="Enter Passenger Name" name="search.PassengerName" id="search.PassengerName" [(ngModel)]="search.PassengerName">
+          </div>
+          <div class="col-md-4" style="margin-top: 10px;">
+            <label for="flightno">Booking Date</label>
+            <input type="date" class="form-control" placeholder="Enter booking date" name="search.BDate" id="search.BDate" [(ngModel)]="search.BDate">
+          </div>
+          <div class="col-md-4" style="margin-top: 10px;">
+            <label for="flightno">Arrival</label>
+            <input type="text" class="form-control" placeholder="Enter Arrival City" name="search.BArrivalCity" id="search.BArrivalCity" [(ngModel)]="search.BArrivalCity">
+          </div>
+          <div class="col-md-4" style="margin-top: 10px;">
+            <label for="flightno">Departure</label>
+            <input type="text" class="form-control" placeholder="Enter Departure City" name="search.BDepartCity" id="search.BDepartCity" [(ngModel)]="search.BDepartCity">
+          </div>
+          <div class="col-md-4" style="margin-top: 10px;">
+            <label for="flightno">Flight Number</label>
+            <input type="text" class="form-control" placeholder="Enter Flight Number" name="search.FlightNo" id="search.FlightNo" [(ngModel)]="search.FlightNo">
+          </div>
+          <div class="col-md-4" style="margin-top: 34px;">
+            <button class="btn btn-success">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-10 col-md-offset-1" style="margin-top: 20px;border-radius: 5px;border: 1px solid silver;background-color: #f7e3c4;padding: 0px;">
+      <table class="table table-striped" style="margin-bottom:0px;">
+        <thead>
+          <tr>
+            <th>Booking Date</th>
+            <th>Passenger Name</th>
+            <th>Flight Number</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookingList">
+            <td>{{booking.BDate}}</td>
+            <td>{{booking.PessName}}</td>
+            <td>{{booking.FlightNo}}</td>
+            <td>{{booking.BDepartCity}}</td>
+            <td>{{booking.BArrivalCity}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
