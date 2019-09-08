@@ -8,14 +8,14 @@ import { Configuration } from '../../environments/environment.configuration';
 //const httpOptions = {
 //  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 //};
-//const apiUrl = 'http://localhost:5000/api/';
+//const apiUrl = 'http://localhost:44373/api/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   //Setting up api url from environment configuration
-  apiUrl: string = Configuration.apiUrl + "flight/";
+  apiUrl: string = Configuration.apiUrl;
 
   constructor(private http: HttpClient) { }
 
@@ -46,8 +46,9 @@ export class LoginService {
   //  );
   //}
   getSelectedUser(username: string, password: string): Observable<User> {
-    debugger;
-    var url = `${this.apiUrl}Login?username=${username}&password=${password}`;
+    console.log(username);
+    console.log(password);
+    var url = `${this.apiUrl}Users/Login?UserName=${username}&Password=${password}`;
     return this.http.post<User>(url, null);
   }
 

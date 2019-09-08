@@ -18,12 +18,13 @@ export class LoginComponent implements OnInit {
   }
 
   isUserExist() {
-    debugger;
+    console.log("test");
     //this.loginApi.getSelectedUser(username, password);
     this.loginApi.getSelectedUser(this.username, this.password)
       .subscribe(
         response => {
-          debugger;
+          
+          console.log(response);
           if (response != null && response != undefined) {
             localStorage.setItem('currentUser', response.ID.toString());
             if (response.Type == "Admin") {
