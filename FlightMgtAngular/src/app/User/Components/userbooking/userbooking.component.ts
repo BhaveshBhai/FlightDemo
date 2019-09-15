@@ -26,6 +26,8 @@ export class UserbookingComponent implements OnInit {
       this.Status = params['Status'] || '';
     });
     this.getFlightDetail();
+    debugger;
+    console.log(this.flightData);
   }
 
   goToUserHome() {
@@ -47,15 +49,17 @@ export class UserbookingComponent implements OnInit {
   getFlightDetail() {
     this.adminApi.GetFlightDetailById(this.ID).subscribe(m => {
       this.flightData = m;
+      debugger;
+      console.log(this.flightData);
     });
   }
 
   addPassengers(form: NgForm) {
     if (form.valid) {
       debugger;
-      this.bookingInput.FlightID = this.flightData.ID;
-      this.bookingInput.BArrivalCity = this.flightData.ArrivalCity;
-      this.bookingInput.BDepartCity = this.flightData.DepartCity;
+      this.bookingInput.FlightID = this.flightData.id;
+      this.bookingInput.BArrivalCity = this.flightData.arrivalCity;
+      this.bookingInput.BDepartCity = this.flightData.departCity;
       this.bookingInput.UserID = parseInt(localStorage.getItem('currentUser'));
       this.bookingInput.BookID = "";
       this.bookingInput.Status = this.Status;

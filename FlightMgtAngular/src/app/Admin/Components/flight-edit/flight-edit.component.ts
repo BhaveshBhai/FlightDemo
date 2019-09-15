@@ -22,6 +22,8 @@ export class FlightEditComponent implements OnInit {
       this.ID = params['ID'] || '';
     });
     this.getFlightDetail();
+    debugger;
+
   }
 
   goToFlightList() {
@@ -42,27 +44,29 @@ export class FlightEditComponent implements OnInit {
   getFlightDetail() {
     this.api.GetFlightDetailById(this.ID).subscribe(m => {
       this.flightData = m;
+      debugger;
+      console.log(this.flightData);
     });
   }
 
   updateFlight(form: NgForm) {
     debugger;
     if (form.valid) {
-      if (this.flightInput.ID == undefined)
-        this.flightInput.ID = this.flightData.ID;
-      if (this.flightInput.FlightNo == undefined)
-        this.flightInput.FlightNo = this.flightData.FlightNo;
-      if (this.flightInput.StartDate == undefined)
-        this.flightInput.StartDate = this.flightData.StartDate;
-      if (this.flightInput.EndDate == undefined)
-        this.flightInput.EndDate = this.flightData.EndDate;
-      if (this.flightInput.PassCapacity == undefined)
-        this.flightInput.PassCapacity = this.flightData.PassCapacity;
-      if (this.flightInput.DepartCity == undefined)
-        this.flightInput.DepartCity = this.flightData.DepartCity;
-      if (this.flightInput.ArrivalCity == undefined)
-        this.flightInput.ArrivalCity = this.flightData.ArrivalCity;
-
+      if (this.flightInput.id == undefined)
+        this.flightInput.id = this.flightData.id;
+      if (this.flightInput.flightNo == undefined)
+        this.flightInput.flightNo = this.flightData.flightNo;
+      if (this.flightInput.startDate == undefined)
+        this.flightInput.startDate = this.flightData.startDate;
+      if (this.flightInput.endDate == undefined)
+        this.flightInput.endDate = this.flightData.endDate;
+      if (this.flightInput.passCapacity == undefined)
+        this.flightInput.passCapacity = this.flightData.passCapacity;
+      if (this.flightInput.departCity == undefined)
+        this.flightInput.departCity = this.flightData.departCity;
+      if (this.flightInput.arrivalCity == undefined)
+        this.flightInput.arrivalCity = this.flightData.arrivalCity;
+      
       this.api.editFlight(this.flightInput).subscribe(
         response => {
           debugger;

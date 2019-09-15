@@ -1,11 +1,11 @@
 export class Flight {
-  ID: number;
-  FlightNo: string;
-  StartDate: string;
-  EndDate: string;
-  PassCapacity: number;
-  DepartCity: string;
-  ArrivalCity: string;
+  id: number;
+  flightNo: string;
+  startDate: string;
+  endDate: string;
+  passCapacity: number;
+  departCity: string;
+  arrivalCity: string;
   NoOfPassenger: number;
   Status: string;
 }

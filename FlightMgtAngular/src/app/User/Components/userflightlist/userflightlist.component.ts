@@ -14,7 +14,10 @@ export class UserflightlistComponent implements OnInit {
   constructor(private route: ActivatedRoute, private api: UserserviceService, private router: Router) { }
 
   ngOnInit() {
+    debugger;
     this.getFlightList();
+    debugger;
+    console.log(this.flightList);
   }
 
   goToUserHome() {
@@ -37,10 +40,12 @@ export class UserflightlistComponent implements OnInit {
     debugger;
     this.api.getAllFlights().subscribe(m => {
       this.flightList = m;
+      debugger;
+      console.log(this.flightList);
     });
   }
 
   getBooking(flight: Flight) {
-    this.router.navigate(['/userbooking'], { queryParams: { ID: flight.ID , Status : flight.Status} });
+    this.router.navigate(['/userbooking'], { queryParams: { ID: flight.id , Status : flight.Status} });
   }
 }

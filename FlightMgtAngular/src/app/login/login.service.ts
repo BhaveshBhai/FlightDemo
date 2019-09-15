@@ -46,6 +46,7 @@ export class LoginService {
   //  );
   //}
   getSelectedUser(username: string, password: string): Observable<User> {
+    debugger;
     console.log(username);
     console.log(password);
     var url = `${this.apiUrl}Users/Login?UserName=${username}&Password=${password}`;

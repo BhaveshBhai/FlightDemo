@@ -36,12 +36,12 @@
         </thead>
         <tbody>
           <tr *ngFor="let flight of flightList">
-            <td>{{flight.FlightNo}}</td>
-            <td>{{flight.StartDate}}</td>
-            <td>{{flight.EndDate}}</td>
-            <td>{{flight.PassCapacity}}</td>
-            <td>{{flight.DepartCity}}</td>
-            <td>{{flight.ArrivalCity}}</td>
+            <td>{{flight.flightNo}}</td>
+            <td>{{flight.startDate}}</td>
+            <td>{{flight.endDate}}</td>
+            <td>{{flight.passCapacity}}</td>
+            <td>{{flight.departCity}}</td>
+            <td>{{flight.arrivalCity}}</td>
             <td><a (click)="getFlightDetail(flight)"><i class="glyphicon glyphicon-pencil" style="color: navy;cursor: pointer;"></i></a></td>
             <td><a (click)="deleteFlight(flight)"><i class="glyphicon glyphicon-trash" style="color: red;cursor: pointer;"></i></a></td>
           </tr>

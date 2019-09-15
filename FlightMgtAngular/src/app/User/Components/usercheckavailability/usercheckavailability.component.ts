@@ -34,10 +34,10 @@ export class UsercheckavailabilityComponent implements OnInit {
 
   getCheckAvailability() {
     debugger;
-    this.search.StartDate = this.search.StartDate == undefined ? "" : this.search.StartDate;
-    this.search.EndDate = this.search.EndDate == undefined ? "" : this.search.EndDate;
+    this.search.startDate = this.search.startDate == undefined ? "" : this.search.startDate;
+    this.search.endDate = this.search.endDate == undefined ? "" : this.search.endDate;
     this.search.NoOfPassenger = this.search.NoOfPassenger == undefined ? 0 : this.search.NoOfPassenger;
-    this.api.getAvailability(this.search.StartDate, this.search.EndDate, this.search.NoOfPassenger).subscribe(m => {
+    this.api.getAvailability(this.search.startDate, this.search.endDate, this.search.NoOfPassenger).subscribe(m => {
       this.flightList = m;
     });
   }

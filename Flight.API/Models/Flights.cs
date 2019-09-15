@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Flight.API.Models
 {
@@ -16,5 +17,7 @@ namespace Flight.API.Models
         public string ArrivalCity { get; set; }
 
         public virtual ICollection<Booking> Booking { get; set; }
+        [NotMapped]
+        public string Status { get; set; }
     }
 }

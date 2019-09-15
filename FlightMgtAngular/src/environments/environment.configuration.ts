@@ -5,5 +5,5 @@ export class Configuration {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   //Web api path
-  static apiUrl = 'http://localhost:44373/api/';
+  static apiUrl = 'http://localhost:51703/api/';
 }

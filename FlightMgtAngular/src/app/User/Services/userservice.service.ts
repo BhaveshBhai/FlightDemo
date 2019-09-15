@@ -51,7 +51,7 @@ export class UserserviceService {
       );
   }
 
-  getSearchBooking(PassengerName: string, BDate: string, BArrivalCity: string, BDepartCity: string, FlightNo: string, UserId : string) {
+  getSearchBooking(PassengerName: string, BDate: string, BArrivalCity: string, BDepartCity: string, FlightNo: string, UserId: string): Observable<Booking[]> {
     return this.http.post<Booking[]>(this.apiUrl + `BookingFilter?PassName=${PassengerName}&BDate=${BDate}&BArrivalCity=${BArrivalCity}&BDepartCity=${BDepartCity}&FlightNo=${FlightNo}&UserID=${UserId}`, null)
       .pipe(
         tap(heroes => console.log('Get Booking')),

@@ -18,5 +18,7 @@ namespace Flight.API.Models
         public int RoleId { get; set; }
 
         public virtual ICollection<Booking> Booking { get; set; }
+        [NotMapped]
+        public string RoleName { get; set; }
     }
 }

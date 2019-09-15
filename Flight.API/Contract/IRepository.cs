@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Flight.API.Models;
 
 namespace Flight.API.Contract
 {
    public interface IRepository<T>
     {
         IEnumerable<T> GetAll();
-        IEnumerable<T> Login(string UserName, String Password);
-
+        Users Login(string UserName, String Password);
     }
 }

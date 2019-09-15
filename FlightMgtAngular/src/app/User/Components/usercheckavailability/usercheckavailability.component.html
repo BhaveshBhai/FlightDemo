@@ -25,11 +25,11 @@
       <form name="form" (ngSubmit)="getCheckAvailability(checkAvailabilityForm)" #checkAvailabilityForm="ngForm">
         <div class="col-md-3" style="margin-top: 10px;">
           <label for="flightno">Start Date</label>
-          <input type="date" class="form-control" placeholder="Enter start date" name="search.StartDate" id="search.StartDate" [(ngModel)]="search.StartDate">
+          <input type="date" class="form-control" placeholder="Enter start date" name="search.startDate" id="search.startDate" [(ngModel)]="search.startDate">
         </div>
         <div class="col-md-3" style="margin-top: 10px;">
           <label for="flightno">End Date</label>
-          <input type="date" class="form-control" placeholder="Enter end date" name="search.EndDate" id="search.EndDate" [(ngModel)]="search.EndDate">
+          <input type="date" class="form-control" placeholder="Enter end date" name="search.endDate" id="search.endDate" [(ngModel)]="search.endDate">
         </div>
         <div class="col-md-4" style="margin-top: 10px;">
           <label for="flightno">Number of Passenger</label>
@@ -55,12 +55,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let flight of flightList">
-          <td>{{flight.FlightNo}}</td>
-          <td>{{flight.StartDate}}</td>
-          <td>{{flight.EndDate}}</td>
-          <td>{{flight.DepartCity}}</td>
-          <td>{{flight.ArrivalCity}}</td>
-          <td [ngStyle]="flight.Status == 'WaitList' ?{'background-color': '#ff2626','color':'white'} : {'background-color': '#56a50f', 'color': 'white'}">{{flight.Status}}</td>
+          <td>{{flight.flightNo}}</td>
+          <td>{{flight.startDate}}</td>
+          <td>{{flight.endDate}}</td>
+          <td>{{flight.departCity}}</td>
+          <td>{{flight.arrivalCity}}</td>
+          <td [ngStyle]="flight.status == 'WaitList' ?{'background-color': '#ff2626','color':'white'} : {'background-color': '#56a50f', 'color': 'white'}">{{flight.status}}</td>
         </tr>
       </tbody>
     </table>

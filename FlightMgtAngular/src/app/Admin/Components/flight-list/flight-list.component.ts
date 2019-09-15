@@ -38,16 +38,19 @@ export class FlightListComponent implements OnInit {
     debugger;
     this.api.getAllFlights().subscribe(m => {
       this.flightList = m;
+      console.log(this.flightList);
+      debugger;
     })
   }
 
   getFlightDetail(flight: Flight) {
     debugger;
-    this.router.navigate(['/adminflightedit'], { queryParams: { ID: flight.ID} });
+    this.router.navigate(['/adminflightedit'], { queryParams: { ID: flight.id} });
   }
 
   deleteFlight(flight: Flight) {
-    this.api.deleteFlight(flight.ID).subscribe(
+    debugger;
+    this.api.deleteFlight(flight.id).subscribe(
       response => {
         debugger;
         if (response) {

@@ -22,30 +22,30 @@
 <form name="form" (ngSubmit)="updateFlight(flightEditForm)" #flightEditForm="ngForm">
   <div class="col-md-12">
     <div class="col-md-6 col-md-offset-3" style="margin-top: 20px; padding: 18px;border-radius: 5px;border: 1px solid silver;background-color: #e0def5;">
-      <input type="hidden" name="flightInput.ID" id="flightInput.ID" value="{{flightData.ID}}" [(ngModel)]="flightInput.ID" />
+      <!--<input type="hidden" name="flightInput.id" id="flightInput.id" value="{{flightData.id}}" [(ngModel)]="flightInput.id" />-->
       <div class="form-group" style="margin-top: 15px;">
         <label for="flightno">Flight No</label>
-        <input type="text" class="form-control" placeholder="Enter Flight Number" name="flightInput.FlightNo" id="flightInput.FlightNo" value="{{flightData.FlightNo}}" [(ngModel)]="flightInput.FlightNo">
+        <input type="text" class="form-control" placeholder="Enter Flight Number" name="flightInput.flightNo" id="flightInput.flightNo" value="{{flightData.flightNo}}" [(ngModel)]="flightInput.flightNo">
       </div>
       <div class="form-group" style="margin-top: 15px;">
-        <label for="startdate">Start Date</label>
-        <input type="date" class="form-control" placeholder="Enter Start Date" name="flightInput.StartDate" id="flightInput.StartDate" value="{{flightData.StartDate}}" [(ngModel)]="flightInput.StartDate">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control" placeholder="Enter Start Date" name="flightInput.startDate" id="flightInput.startDate" value="{{flightData.startDate}}" [(ngModel)]="flightInput.startDate">
       </div>
       <div class="form-group" style="margin-top: 15px;">
-        <label for="enddate">End Date</label>
-        <input type="date" class="form-control" placeholder="Enter End Date" name="flightInput.EndDate" id="flightInput.EndDate" value="{{flightData.EndDate}}" [(ngModel)]="flightInput.EndDate">
+        <label for="endDate">End Date</label>
+        <input type="date" class="form-control" placeholder="Enter End Date" name="flightInput.endDate" id="flightInput.endDate" value="{{flightData.endDate}}" [(ngModel)]="flightInput.endDate">
       </div>
       <div class="form-group">
-        <label for="passcapacity">Passenger Capacity</label>
-        <input type="number" class="form-control" placeholder="Enter Passenger Capacity" name="flightInput.PassCapacity" id="flightInput.PassCapacity" value="{{flightData.PassCapacity}}" [(ngModel)]="flightInput.PassCapacity">
+        <label for="passCapacity">Passenger Capacity</label>
+        <input type="number" class="form-control" placeholder="Enter Passenger Capacity" name="flightInput.passCapacity" id="flightInput.passCapacity" value="{{flightData.passCapacity}}" [(ngModel)]="flightInput.passCapacity">
       </div>
       <div class="form-group">
         <label for="depcity">Departure City</label>
-        <input type="text" class="form-control" placeholder="Enter Departure City" name="flightInput.DepartCity" id="flightInput.DepartCity" value="{{flightData.DepartCity}}" [(ngModel)]="flightInput.DepartCity">
+        <input type="text" class="form-control" placeholder="Enter Departure City" name="flightInput.departCity" id="flightInput.departCity" value="{{flightData.departCity}}" [(ngModel)]="flightInput.departCity">
       </div>
       <div class="form-group">
         <label for="arrcity">Arrival City</label>
-        <input type="text" class="form-control" placeholder="Enter Arrival City" name="flightInput.ArrivalCity" id="flightInput.ArrivalCity" value="{{flightData.ArrivalCity}}" [(ngModel)]="flightInput.ArrivalCity">
+        <input type="text" class="form-control" placeholder="Enter Arrival City" name="flightInput.arrivalCity" id="flightInput.arrivalCity" value="{{flightData.arrivalCity}}" [(ngModel)]="flightInput.arrivalCity">
       </div>
       <button class="btn btn-success">Update Flight</button>
       <button class="btn btn-warning" (click)="goToFlightList()" style="margin-left: 15px;">Cancel</button>

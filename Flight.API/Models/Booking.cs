@@ -11,7 +11,7 @@ namespace Flight.API.Models
         public int Id { get; set; }
         public string BookId { get; set; }
         public string PassengerName { get; set; }
-        public DateTime Bdate { get; set; }
+        public  DateTime? Bdate { get; set; }
         public string BarrivalCity { get; set; }
         public string BdepartCity { get; set; }
         public string Status { get; set; }
@@ -20,6 +20,8 @@ namespace Flight.API.Models
         public int FlightId { get; set; }
         [ForeignKey("UserId")]
         public virtual Users User { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
+        [NotMapped]
+        public string FlightNo { get; set; }
     }
 }

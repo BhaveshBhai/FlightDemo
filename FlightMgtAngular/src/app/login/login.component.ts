@@ -23,14 +23,14 @@ export class LoginComponent implements OnInit {
     this.loginApi.getSelectedUser(this.username, this.password)
       .subscribe(
         response => {
-          
+          debugger;
           console.log(response);
           if (response != null && response != undefined) {
-            localStorage.setItem('currentUser', response.ID.toString());
-            if (response.Type == "Admin") {
+            localStorage.setItem('currentUser', response.id.toString());
+            if (response.roleName == "Admin") {
               this.router.navigateByUrl('/adminhome');
               console.log("Admin Login Success");
-            } else if (response.Type == "User") {
+            } else if (response.roleName == "User") {
               console.log("User Login Success");
               this.router.navigateByUrl('/home');
             } else {
